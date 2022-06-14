@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Counter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .main_container {
+        padding: 2rem 1rem 0 1rem;
+        box-shadow: 1px 2px 10px gray;
+        border-radius: 10px;
+      }
+
+      .number {
+        font-size: 100px;
+        font-weight: 200;
+      }
+
+      .btn_container button {
+        margin: 2rem 0.5rem;
+        padding: 13px 15px;
+        background-color: rgb(54, 148, 255);
+        border: none;
+        border-radius: 4px;
+        color: white;
+        transition: all 0.2s;
+        cursor: pointer;
+        border-top: 1px gray;
+      }
+
+      .btn_container button:hover {
+        background-color: rgb(9, 91, 185);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+      <h1 class="number">0</h1>
+      <div class="btn_container">
+        <button class="decrease">Decrease</button>
+
+        <button class="reset">Reset</button>
+        <button class="increase">Increase</button>
+      </div>
+    </div>
+
+    <script>
+      const number = document.querySelector(".number");
+      const increase = document.querySelector(".increase");
+      const reset = document.querySelector(".reset");
+      const decrease = document.querySelector(".decrease");
+
+      increase.addEventListener("click", () => {
+        number.innerHTML++;
+      });
+
+    //   if (number > 0) {
+        decrease.addEventListener("click", () => {
+          number.innerHTML--;
+        });
+    //   }
+
+      reset.addEventListener("click", () => {
+        number.innerHTML = 0;
+      });
+    </script>
+  </body>
+</html>
